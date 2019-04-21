@@ -117,7 +117,6 @@ const styles = StyleSheet.create({
     width: SCREEN_WIDTH,
     flexDirection: "row",
     paddingLeft: 10,
-    paddingBottom: 13,
     backgroundColor: "#2252C7"
   },
   stickyItem: {
@@ -138,7 +137,8 @@ const styles = StyleSheet.create({
   },
   scrollViewContent: {
     paddingLeft: 100,
-    paddingRight: 10
+    paddingRight: 10,
+    paddingBottom: 13
   },
   dropDownIcon: {
     marginRight: 6

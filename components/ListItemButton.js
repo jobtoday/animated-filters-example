@@ -68,7 +68,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: "400",
     lineHeight: 18,
-    color: "#FFFFFF"
+    color: "#FFFFFF",
+    ...Platform.select({ web: { textOverflow: "clip" }, default: {} })
   },
   textActive: {
     color: "#2252C7"

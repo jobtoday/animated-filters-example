@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Dimensions,
   Linking,
   Text,
   View,
@@ -30,6 +31,7 @@ const filters = [
 ];
 
 const MEDIUM_ARTICLE_URL = "https://medium.com/p/2bdde7a4f16c/";
+const SCREEN_WIDTH = Dimensions.get("screen").width;
 
 export default class App extends React.Component {
   openArticle() {
@@ -60,6 +62,12 @@ export default class App extends React.Component {
             <IconMediumLogo />
             <Text style={styles.linkText}>Back to the Article</Text>
           </TouchableOpacity>
+          {SCREEN_WIDTH > 500 && (
+            <Text style={styles.tip}>
+              If you opened example on desktop, please, switch to mobile view in
+              dev tools and reload the page.
+            </Text>
+          )}
         </View>
       </View>
     );
@@ -101,5 +109,11 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     fontFamily: Platform.select({ web: "Serif", default: undefined }),
     textDecorationLine: "underline"
+  },
+  tip: {
+    width: 400,
+    marginTop: 100,
+    textAlign: "center",
+    color: "#777"
   }
 });
